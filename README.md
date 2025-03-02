@@ -70,9 +70,6 @@ public class ContactManager {
                     manager.displayContacts();
                     break;
                 case "3":
-                    manager.searchContact();
-                    break;
-                case "4":
                     System.out.println("Exiting...");
                     break;
                 default:
