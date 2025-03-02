@@ -172,3 +172,4 @@ git commit -m "Add search functionality"
 ```
 git checkout main
 ```
+*You ll notice the changes you just dod to add search function is gone, since it was added in the feature branch*
