@@ -173,3 +173,36 @@ git commit -m "Add search functionality"
 git checkout main
 ```
 *You ll notice the changes you just dod to add search function is gone, since it was added in the feature branch*
+
+## Merge the feature branch
+Lets merge our feature branch to main branch. 
+```console
+git merge add-search-feature
+```
+*git merge takes the changes from the specified branch (add-search-feature) and integrates them into the current branch (which is main in this case).  This combines the work done on the feature branch into the main line of development.*
+
+Notice how the additional method we added in feature branch is back in the ContactManager class.
+
+## Delete the branch
+Lets delete the feature branch now. It's a good practice to delete branches after they've been merged to keep your repository clean.
+```
+git branch -d add-search-feature
+```
+*The git branch -d <branch_name> command deletes the specified branch locally*
+
+## Create a github repo
+Go to https://github.com/ and create a new, empty repository.( Sign up if you dont have an account.) Don't add a README, .gitignore, or license yet (we've already created those locally).  Give it a name like "ContactManager-Git-Example".
+
+### Connect local git repo to remote git repo
+Now we will connect our local git repo we were using to a remote repo we just created in github.com . Generally github provides instructions. Select the one under "…or push an existing repository from the command line". It will look like:
+```
+git remote add origin https://github.com/sjit123/learn-git.git #replace with your git remote url
+git branch -M main
+git push -u origin main
+```
+- git remote add origin <repository_url>: This command adds a "remote" named origin (a common convention) that points to your GitHub repository's URL. A remote is a connection to another Git repository.
+- git branch -M main: This command renames the local master branch, if that is the current name of your main branch, to main to align with GitHub's default branch naming.
+- git push -u origin main: This is the crucial command.
+** git push: This pushes your local commits to a remote repository.
+** -u origin main: This sets up a tracking relationship. It tells Git that your local main branch should track the main branch on the origin remote (your GitHub repository). After this first push, you can simply use git push without arguments.
+

@@ -31,23 +31,20 @@ public class ContactManager {
         }
     }
 
-
-
-
-public void searchContact() {
-    System.out.print("Enter name to search: ");
-    String query = scanner.nextLine();
-    boolean found = false;
-    for (Contact contact : contacts) {
-        if (contact.getName().toLowerCase().contains(query.toLowerCase())) {
-            System.out.println(contact);
-            found = true;
+    public void searchContact() {
+        System.out.print("Enter name to search: ");
+        String query = scanner.nextLine();
+        boolean found = false;
+        for (Contact contact : contacts) {
+            if (contact.getName().toLowerCase().contains(query.toLowerCase())) {
+                System.out.println(contact);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No contacts found matching '" + query + "'.");
         }
     }
-    if (!found) {
-        System.out.println("No contacts found matching '" + query + "'.");
-    }
-}
 
     public static void main(String[] args) {
         ContactManager manager = new ContactManager();
@@ -83,10 +80,10 @@ public void searchContact() {
     }
 }
 
-
 class Contact {
     private String name;
     private String number;
+
     public Contact(String name, String number) {
         this.name = name;
         this.number = number;
@@ -101,4 +98,3 @@ class Contact {
         return "Name: " + name + ", Number: " + number;
     }
 }
-
