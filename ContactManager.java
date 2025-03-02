@@ -31,6 +31,24 @@ public class ContactManager {
         }
     }
 
+
+
+
+public void searchContact() {
+    System.out.print("Enter name to search: ");
+    String query = scanner.nextLine();
+    boolean found = false;
+    for (Contact contact : contacts) {
+        if (contact.getName().toLowerCase().contains(query.toLowerCase())) {
+            System.out.println(contact);
+            found = true;
+        }
+    }
+    if (!found) {
+        System.out.println("No contacts found matching '" + query + "'.");
+    }
+}
+
     public static void main(String[] args) {
         ContactManager manager = new ContactManager();
         Scanner inputScanner = new Scanner(System.in);
@@ -52,6 +70,9 @@ public class ContactManager {
                     manager.displayContacts();
                     break;
                 case "3":
+                    manager.searchContact();
+                    break;
+                case "4":
                     System.out.println("Exiting...");
                     break;
                 default:
@@ -69,6 +90,10 @@ class Contact {
     public Contact(String name, String number) {
         this.name = name;
         this.number = number;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
