@@ -206,3 +206,24 @@ git push -u origin main
 ** git push: This pushes your local commits to a remote repository.
 ** -u origin main: This sets up a tracking relationship. It tells Git that your local main branch should track the main branch on the origin remote (your GitHub repository). After this first push, you can simply use git push without arguments.
 
+#### Subsequent push
+After making more changes locally (and committing them), you can push them to GitHub with:
+```
+git push
+```
+*git push sends your local commits to the remote repository.  This is how you share your code and collaborate with others.*
+
+## Other useful git commands 
+#### git status
+*Use this constantly. It shows the status of your working directory and staging area.  It tells you which files are modified, staged, or untracked.  It's crucial for understanding the current state of your repository.*
+
+#### git log
+*git log shows the commit history of your repository.  It displays commit messages, authors, dates, and commit hashes (unique identifiers for each commit).  This is essential for understanding the history of the project.  You can use options like git log --oneline for a more concise view.*
+When running from terminal. Hit q to exit log mode.
+
+#### git diff
+Shows the differences between your working directory and the last commit, or between two commits.  It's essential for reviewing changes before committing them.
+- git diff <file>: Shows changes to a specific file.
+- git diff <commit1> <commit2>: Shows changes between two commits.
+- git diff --staged: Shows differences between the staging area and the last commit.
+
