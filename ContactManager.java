@@ -75,7 +75,7 @@ public class ContactManager {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-        } while (!choice.equals("3"));
+        } while (!choice.equals("4"));
         inputScanner.close();
     }
 }
